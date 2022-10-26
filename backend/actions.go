@@ -136,3 +136,11 @@ func watcherAddProfiles(c *gin.Context) {
 	addProfiles(c)
 	closeDB()
 }
+
+func watcherHealthCheck(c *gin.Context) {
+	data := map[string]interface{}{
+		"message": "success",
+	}
+	log.Println("Health Check...")
+	c.IndentedJSON(http.StatusOK, data)
+}

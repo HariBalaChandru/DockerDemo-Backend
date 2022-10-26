@@ -47,6 +47,7 @@ func main() {
 		MaxAge: 12 * time.Hour,
 	}))
 
+	router.GET("/health", watcherHealthCheck)
 	router.GET("/profiles", watcherReadProfile)
 	router.GET("/db/populate", watcherPopulateDB)
 	router.GET("/close", watcherCloseDB)
